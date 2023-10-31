@@ -1,0 +1,33 @@
+{
+  "name": "cordova-plugin-google-signin",
+  "version": "1.0.0",
+  "author": "Originally written by Eddy Verbruggen",
+  "description": "Use your Google account to authenticated in your cordova mobile app",
+  "cordova": {
+    "id": "cordova-plugin-google-signin",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "keywords": [
+    "Google",
+    "Google SignIn",
+    "Google Sign In",
+    "GoogleSignIn",
+    "Google Login",
+    "Google Plus",
+    "Login",
+    "OAuth",
+    "Identity",
+    "Authentication",
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios"
+  ],
+  "platforms": [
+    "android",
+    "ios"
+  ],
+  "license": "Apache"
+}
