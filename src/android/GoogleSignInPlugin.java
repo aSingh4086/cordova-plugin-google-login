@@ -78,7 +78,7 @@ public class GoogleSignInPlugin extends CordovaPlugin implements GoogleApiClient
         super.initialize(cordova, webView);
         AppCompatActivity cordovaActivity = cordova.getActivity();
         Lifecycle.State state = cordovaActivity.getLifecycle().getCurrentState();
-        if(state.ordinal() >= Lifecycle.State.CREATED.ordinal() && signInActivityLauncher != null) {
+        if(state.ordinal() >= Lifecycle.State.CREATED.ordinal()) {
             return;
         }
         this.signInActivityLauncher = cordovaActivity.registerForActivityResult(
