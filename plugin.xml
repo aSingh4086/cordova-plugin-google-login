@@ -1,18 +1,19 @@
 <?xml version='1.0' encoding='utf-8'?>
-<plugin id="cordova-plugin-google-signin" version="1.0.0" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+<plugin id="cordova-plugin-google-signin" version="2.0.3" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
     <name>GoogleSignInPlugin</name>
     <js-module name="GoogleSignInPlugin" src="www/GoogleSignInPlugin.js">
         <clobbers target="window.plugins.googleplus" />
     </js-module>
     <platform name="android">
-        <preference name="PLAY_SERVICES_AUTH_VERSION" default="20.3.0"/>
-        <preference name="PLAY_SERVICES_IDENTITY_VERSION" default="18.0.1"/>
-        <framework src="com.google.android.gms:play-services-auth:$PLAY_SERVICES_AUTH_VERSION" />
-        <framework src="com.google.android.gms:play-services-identity:$PLAY_SERVICES_IDENTITY_VERSION" />
+        <preference name="CREDENTIALS_MANAGER_VERSION" default="1.2.2"/>
+        <framework src="com.google.android.gms:play-services-identity:18.0.1"/>
+        <framework src="androidx.credentials:credentials:$CREDENTIALS_MANAGER_VERSION" />
+        <framework src="com.google.android.libraries.identity.googleid:googleid:1.1.0"/>
+        <framework src="androidx.credentials:credentials-play-services-auth:1.2.2"/>
 
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="GoogleSignInPlugin">
-                <param name="android-package" value="com.googleSignIn.plugin.GoogleSignInPlugin" />
+                <param name="android-package" value="com.googleSignIn.plugin.GoogleCredentialManager" />
                 <param name="onload" value="true" />
             </feature>
             <access origin="https://accounts.google.com/*" />
@@ -22,15 +23,16 @@
             <uses-permission android:name="android.permission.GET_ACCOUNTS" />
             <uses-permission android:name="android.permission.USE_CREDENTIALS" />
         </config-file>
-        <source-file src="src/android/GoogleSignInPlugin.java" target-dir="src/com/googleSignIn/plugin"/>
+        <source-file src="src/android/GoogleCredentialManager.kt" target-dir="src/main/kotlin/com/googleSignIn/plugin" />
     </platform>
     <platform name="ios">
         <config-file parent="/*" target="config.xml">
             <feature name="GoogleSignInPlugin">
-                <param name="ios-package" value="GoogleSignInPlugin" />
+                <param name="ios-package" value="GoogleSignInCredentialManager" />
             </feature>
+            <preference name="SwiftVersion" value="5" />
         </config-file>
-        <source-file src="src/ios/GoogleSignInPlugin.m" />
+        <source-file src="src/ios/GoogleSignInCredentialManager.swift"/>
 
         <preference name="REVERSED_CLIENT_ID" />
         <config-file target="*-Info.plist" parent="CFBundleURLTypes">
@@ -50,11 +52,10 @@
 
           <podspec>
             <config>
+              <podsec name="GoogleSignIn"/>
               <source url="https://cdn.cocoapods.org/"/>
             </config>
-            <pods use-frameworks="true">
-              <pod name="GoogleUtilities" spec="7.11.5" />
-            </pods>
+    
           </podspec>
 
     </platform>
