@@ -1,10 +1,10 @@
 {
-  "name": "cordova-plugin-google-signin",
+  "name": "cordova-plugin-google-login",
   "version": "1.0.0",
   "author": "Batman",
   "description": "Use your Google account to authenticated in your cordova mobile app",
   "cordova": {
-    "id": "cordova-plugin-google-signin",
+    "id": "cordova-plugin-google-login",
     "platforms": [
       "android",
       "ios"
