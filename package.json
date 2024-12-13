@@ -1,7 +1,7 @@
 {
   "name": "cordova-plugin-google-signin",
   "version": "1.0.0",
-  "author": "Originally written by Eddy Verbruggen",
+  "author": "Batman",
   "description": "Use your Google account to authenticated in your cordova mobile app",
   "cordova": {
     "id": "cordova-plugin-google-signin",
