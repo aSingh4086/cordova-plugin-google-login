@@ -6,6 +6,10 @@ Cordova plugin for integrating Google Signin in Android &amp; iOS app.
 
 The plugin allows you to authenticate users with Google Sign-In on iOS and Android. The API allows you get idToken. Any other information required can be requested via Issues. 
 
+## Process
+Android Only => Uses Google credentials if user has previously logged in using google signin. If no credentials are available, new token is requested via google sign in options. 
+IOS only => Upgraded to use https://developers.google.com/identity/sign-in/ios/start-integrating
+
 ## Installation
 
 ### Firebase Project
