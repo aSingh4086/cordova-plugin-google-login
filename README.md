@@ -1,4 +1,4 @@
-# cordova-plugin-google-signin
+# cordova-plugin-google-login
 
 Cordova plugin for integrating Google Signin in Android &amp; iOS app.
 
